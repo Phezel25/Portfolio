@@ -1,857 +1,579 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Bianca D. Grumacon</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bianca D. Grumacon | Technical Virtual Professional</title>
+  <meta name="description" content="Portfolio of Bianca D. Grumacon - Technical Virtual Professional, Web Developer, and IT Specialist.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              bg: '#0f172a',      // slate-900
+              surface: '#1e293b', // slate-800
+              surfaceHover: '#334155', // slate-700
+              accent: '#14b8a6',  // teal-500
+              accentHover: '#0d9488', // teal-600
+              text: '#94a3b8',    // slate-400
+              heading: '#f8fafc', // slate-50
+            }
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: MyPage
-  * Template URL: https://bootstrapmade.com/mypage-bootstrap-personal-template/
-  * Updated: Sep 20 2025 with Bootstrap v5.3.8
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #14b8a6; }
+    
+    /* Glowing effects */
+    .glow-accent { box-shadow: 0 0 20px rgba(20, 184, 166, 0.15); }
+    .hover-glow:hover { box-shadow: 0 0 25px rgba(20, 184, 166, 0.3); }
+    
+    /* Gradient Text */
+    .text-gradient {
+      background: linear-gradient(to right, #14b8a6, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
 </head>
+<body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-accent selection:text-white">
 
-<body class="index-page">
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-brand-bg/80 border-b border-brand-surface" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex justify-between items-center h-20">
+        <a href="#" class="text-xl font-bold text-brand-heading tracking-tight flex items-center gap-2">
+          <span class="w-8 h-8 rounded-lg bg-brand-accent text-white flex items-center justify-center font-bold text-lg">B</span>
+          Bianca Grumacon
+        </a>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#about" class="text-sm font-medium hover:text-brand-accent transition-colors">About</a>
+          <a href="#skills" class="text-sm font-medium hover:text-brand-accent transition-colors">Skills</a>
+          <a href="#experience" class="text-sm font-medium hover:text-brand-accent transition-colors">Experience</a>
+          <a href="#contact" class="px-5 py-2.5 text-sm font-medium text-white bg-brand-accent rounded-lg hover:bg-brand-accentHover transition-colors shadow-lg shadow-brand-accent/20">Let's Talk</a>
+        </div>
 
-  <header id="header" class="header dark-background d-flex flex-column justify-content-between">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <div class="header-top">
-      <div class="profile-img">
-        <img src="assets/img/profile/Pictureofme.png" alt="" class="img-fluid">
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-brand-heading text-2xl">
+          <i class="ph ph-list"></i>
+        </button>
       </div>
-
-      <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/15img/logo.webp" alt=""> -->
-        <h1 class="sitename">Bianca D. Grumacon</h1>
-      </a>
-
     </div>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Skills</a></li>
-        <!-- <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li> -->
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="social-links text-center">
-      <a href="https://www.facebook.com/biancadulfo/"><i class="bi bi-facebook"></i></a>
-      <a href="https://www.instagram.com/phe_zel/"><i class="bi bi-instagram"></i></a>
-      <a
-        href="https://www.linkedin.com/public-profile/settings/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BP3quScCeRr2xZJFHSWnAKA%3D%3D"><i
-          class="bi bi-linkedin"></i></a>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-surface border-b border-brand-surfaceHover">
+      <div class="px-6 py-4 flex flex-col space-y-4">
+        <a href="#about" class="text-base font-medium hover:text-brand-accent mobile-link">About</a>
+        <a href="#skills" class="text-base font-medium hover:text-brand-accent mobile-link">Skills</a>
+        <a href="#experience" class="text-base font-medium hover:text-brand-accent mobile-link">Experience</a>
+        <a href="#contact" class="text-brand-accent font-medium mobile-link">Contact Me</a>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <main class="main">
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <!-- Background Decor -->
+    <div class="absolute top-1/4 left-0 w-96 h-96 bg-brand-accent/10 rounded-full blur-3xl -z-10"></div>
+    <div class="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full grid md:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <!-- <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-surface border border-brand-surfaceHover text-xs font-medium text-brand-accent mb-6">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
+          </span>
+          Available for Hire
+        </div> -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-heading leading-tight mb-6">
+          Hi, I'm Bianca.<br>
+          <span class="text-gradient">Technical Virtual Professional</span>
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed mb-8 max-w-lg" style="text-align: justify;">
+          I combine a Computer Engineering background with virtual assistance skills to organize your data, manage your projects, and streamline your digital operations.
+        </p>
+        
+        <div class="flex flex-wrap items-center gap-4">
+          <!-- <a href="#contact" class="px-8 py-3.5 bg-brand-accent text-white font-medium rounded-xl hover:bg-brand-accentHover transition-all hover:-translate-y-1 hover-glow flex items-center gap-2">
+            Hire Me <i class="ph ph-arrow-right"></i>
+          </a> -->
+          <a href="assets/cv/My_CV.pdf" download class="px-8 py-3.5 bg-brand-surface border border-brand-surfaceHover text-brand-heading font-medium rounded-xl hover:border-brand-accent hover:text-brand-accent transition-all flex items-center gap-2">
+            <i class="ph ph-download-simple"></i> Download CV
+          </a>
+        </div>
+        
+        <div class="mt-10 flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/bianca-grumacon" target="_blank" class="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center text-xl hover:bg-brand-accent hover:text-white transition-colors border border-brand-surfaceHover"><i class="ph ph-linkedin-logo"></i></a>
+          <a href="grumaconbianca@gmail.com" class="w-10 h-10 rounded-full bg-brand-surface flex items-center justify-center text-xl hover:bg-brand-accent hover:text-white transition-colors border border-brand-surfaceHover"><i class="ph ph-envelope-simple"></i></a>
+        </div>
+      </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="relative flex justify-center md:justify-end" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+        <!-- Main Image Container -->
+        <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-3xl overflow-hidden glow-accent border-2 border-brand-surfaceHover">
+          <img src="assets/img/profile/Pictureofme.png" alt="Bianca D. Grumacon" class="w-full h-full object-cover">
+        </div>
+        
+        <!-- Floating Badge 1 -->
+        <div class="absolute -bottom-6 -left-6 bg-brand-surface p-4 rounded-xl border border-brand-surfaceHover shadow-xl flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+          <div class="w-12 h-12 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent text-2xl">
+            <i class="ph ph-code-block"></i>
+          </div>
+          <div>
+            <p class="text-sm font-bold text-brand-heading">IT Specialist</p>
+            <p class="text-xs">Computer Engineer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-brand-surface/30 border-y border-brand-surfaceHover">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right">
+          <h2 class="text-3xl font-bold text-brand-heading mb-6 flex items-center gap-3">
+            <i class="ph ph-user-circle text-brand-accent text-4xl"></i> About Me
+          </h2>
+          <p class="text-lg leading-relaxed mb-6" style="text-align: justify;">
+            I am a Computer Engineering graduate and BSIT Guest Lecturer at Surigao Del Norte State University. My career spans web development, data management, IT education, and software development. 
+          </p>
+          <p class="text-lg leading-relaxed mb-8" style="text-align: justify;">
+            Unlike a standard virtual assistant, my technical background allows me to solve complex problems, manage databases, create responsive websites, and handle embedded systems. I am passionate about innovation, efficiency, and bringing high-level technical support to your team.
+          </p>
+          
+          <div class="p-6 bg-brand-bg rounded-2xl border border-brand-surfaceHover relative overflow-hidden">
+            <i class="ph ph-quotes absolute -top-4 -left-2 text-6xl text-brand-surface opacity-50"></i>
+            <p class="italic text-brand-heading relative z-10" style="text-align: justify;">
+              "Good design is not about perfection—it's about understanding, empathy, and continuous learning from the people who use what we create."
+            </p>
+            <p class="mt-4 text-sm font-medium text-brand-accent">— Wako Dida Godana</p>
+          </div>
+        </div>
+        
+        <!-- Quick Info Grid -->
+        <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+          <div class="p-6 bg-brand-surface rounded-2xl border border-brand-surfaceHover">
+            <i class="ph ph-map-pin text-3xl text-brand-accent mb-3"></i>
+            <h3 class="text-brand-heading font-semibold mb-1">Location</h3>
+            <p class="text-sm">Surigao City, Philippines</p>
+          </div>
+          <div class="p-6 bg-brand-surface rounded-2xl border border-brand-surfaceHover">
+            <i class="ph ph-graduation-cap text-3xl text-brand-accent mb-3"></i>
+            <h3 class="text-brand-heading font-semibold mb-1">Education</h3>
+            <p class="text-sm">Master's in Comp. Eng. (Ongoing)</p>
+          </div>
+          <div class="p-6 bg-brand-surface rounded-2xl border border-brand-surfaceHover">
+            <i class="ph ph-translate text-3xl text-brand-accent mb-3"></i>
+            <h3 class="text-brand-heading font-semibold mb-1">Languages</h3>
+            <p class="text-sm">English, Tagalog, Bisaya</p>
+          </div>
+          <div class="p-6 bg-brand-surface rounded-2xl border border-brand-surfaceHover">
+            <i class="ph ph-briefcase text-3xl text-brand-accent mb-3"></i>
+            <h3 class="text-brand-heading font-semibold mb-1">Availability</h3>
+            <p class="text-sm">Full-time / Part-time</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="intro-header text-center" data-aos="fade-up" data-aos-delay="150">
-              <h1>Hi, I'm Bianca</h1>
+  <!-- Skills Section -->
+  <section id="skills" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-brand-heading mb-4">Premium Value I Bring</h2>
+        <p class="max-w-2xl mx-auto text-lg">My diverse skill set bridges the gap between administrative support and IT engineering.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Skill 1 -->
+        <div class="p-8 bg-brand-surface rounded-2xl border border-brand-surfaceHover hover:border-brand-accent hover:-translate-y-2 transition-all group" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-14 h-14 rounded-xl bg-brand-bg flex items-center justify-center text-3xl text-brand-accent mb-6 group-hover:scale-110 transition-transform">
+            <i class="ph ph-database"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-heading mb-3">Database Management</h3>
+          <p class="text-sm leading-relaxed" style="text-align: justify;">Managing and organizing MySQL databases for secure data storage, retrieval, maintenance, and efficient system performance.</p>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="p-8 bg-brand-surface rounded-2xl border border-brand-surfaceHover hover:border-brand-accent hover:-translate-y-2 transition-all group" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-14 h-14 rounded-xl bg-brand-bg flex items-center justify-center text-3xl text-brand-accent mb-6 group-hover:scale-110 transition-transform">
+            <i class="ph ph-file-code"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-heading mb-3">Web Development</h3>
+          <p class="text-sm leading-relaxed" style="text-align: justify;">Developing responsive, functional websites using HTML, CSS, PHP, Bootstrap, and Laravel with clean layouts and great UX.</p>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="p-8 bg-brand-surface rounded-2xl border border-brand-surfaceHover hover:border-brand-accent hover:-translate-y-2 transition-all group" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-14 h-14 rounded-xl bg-brand-bg flex items-center justify-center text-3xl text-brand-accent mb-6 group-hover:scale-110 transition-transform">
+            <i class="ph ph-file-text"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-heading mb-3">Tech Writing & Research</h3>
+          <p class="text-sm leading-relaxed" style="text-align: justify;">Providing clear documentation, accurate data entry, structured reports, and organized technical content for business needs.</p>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="p-8 bg-brand-surface rounded-2xl border border-brand-surfaceHover hover:border-brand-accent hover:-translate-y-2 transition-all group" data-aos="fade-up" data-aos-delay="400">
+          <div class="w-14 h-14 rounded-xl bg-brand-bg flex items-center justify-center text-3xl text-brand-accent mb-6 group-hover:scale-110 transition-transform">
+            <i class="ph ph-cpu"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-heading mb-3">Software & Embedded</h3>
+          <p class="text-sm leading-relaxed" style="text-align: justify;">Designing systems, building prototypes, and developing IoT-based solutions for automation and smart technology applications.</p>
+        </div>
+
+        <!-- Skill 5 -->
+        <div class="p-8 bg-brand-surface rounded-2xl border border-brand-surfaceHover hover:border-brand-accent hover:-translate-y-2 transition-all group" data-aos="fade-up" data-aos-delay="500">
+          <div class="w-14 h-14 rounded-xl bg-brand-bg flex items-center justify-center text-3xl text-brand-accent mb-6 group-hover:scale-110 transition-transform">
+            <i class="ph ph-paint-brush-broad"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-heading mb-3">Design & Mockups</h3>
+          <p class="text-sm leading-relaxed" style="text-align: justify;">Creating visual content, UI mockups, presentations, and marketing materials using Figma and Canva with professional aesthetics.</p>
+        </div>
+
+        <!-- Skill 6 -->
+        <div class="p-8 bg-brand-surface rounded-2xl border border-brand-surfaceHover hover:border-brand-accent hover:-translate-y-2 transition-all group" data-aos="fade-up" data-aos-delay="600">
+          <div class="w-14 h-14 rounded-xl bg-brand-bg flex items-center justify-center text-3xl text-brand-accent mb-6 group-hover:scale-110 transition-transform">
+            <i class="ph ph-chalkboard-teacher"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-heading mb-3">Training & Support</h3>
+          <p class="text-sm leading-relaxed" style="text-align: justify;">Conducting lectures, workshops, and creating SOPs/guides to help team members build practical IT knowledge and skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience & Education Section -->
+  <section id="experience" class="py-24 bg-brand-surface/30 border-y border-brand-surfaceHover">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      
+      <div class="grid lg:grid-cols-2 gap-16">
+        
+        <!-- Professional Experience -->
+        <div>
+          <div class="flex items-center gap-4 mb-10" data-aos="fade-right">
+            <div class="w-12 h-12 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent text-2xl">
+              <i class="ph ph-briefcase"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-brand-heading">Professional Experience</h2>
+          </div>
+
+          <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-brand-accent before:to-transparent pl-12 md:pl-0">
+            
+            <!-- Item 1 -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active" data-aos="fade-up">
+              <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-brand-bg bg-brand-accent absolute left-0 md:left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 z-10">
+                <i class="ph ph-chalkboard text-white text-sm"></i>
+              </div>
+              <div class="bg-brand-surface p-6 rounded-2xl border border-brand-surfaceHover w-full md:w-[calc(50%-2.5rem)] hover:border-brand-accent transition-colors">
+                <span class="text-brand-accent text-xs font-bold tracking-widest uppercase mb-1 block">Aug 2024 - Present</span>
+                <h3 class="text-xl font-bold text-brand-heading mb-1">Guest Lecturer</h3>
+                <p class="text-sm font-medium text-brand-text mb-3">Surigao Del Norte State University</p>
+                <ul class="text-sm space-y-2 list-disc list-inside">
+                  <li style="text-align: start">Delivered lectures and hands-on activities to IT and IS students.</li>
+                  <li style="text-align: start;">Assessed student learning and provided academic guidance.</li>
+                  <li style="text-align: start;">Collaborated with faculty to align course objectives.</li>
+                </ul>
+              </div>
             </div>
 
-            <div class="main-content-wrapper">
-              <div class="row align-items-start">
+            <!-- Item 2 -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-aos="fade-up">
+              <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-brand-bg bg-brand-surfaceHover absolute left-0 md:left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 z-10 group-hover:bg-brand-accent transition-colors">
+                <i class="ph ph-code text-white text-sm"></i>
+              </div>
+              <div class="bg-brand-surface p-6 rounded-2xl border border-brand-surfaceHover w-full md:w-[calc(50%-2.5rem)] hover:border-brand-accent transition-colors">
+                <span class="text-brand-accent text-xs font-bold tracking-widest uppercase mb-1 block">Feb 2024 - Dec 2024</span>
+                <h3 class="text-xl font-bold text-brand-heading mb-1">Project Research Assistant</h3>
+                <p class="text-sm font-medium text-brand-text mb-3">Surigao Del Norte State University</p>
+                <ul class="text-sm space-y-2 list-disc list-inside">
+                  <li style="text-align: start;">Developed software for an early warning system.</li>
+                  <li style="text-align: start;">Designed/developed a portable weather forecasting device.</li>
+                  <li style="text-align: start;">Conducted pilot testing and assisted in technical writing.</li>
+                </ul>
+              </div>
+            </div>
 
-                <div class="col-lg-4" data-aos="fade-right" data-aos-delay="200">
-                  <div class="profile-section">
-                    <div class="profile-image-container">
-                      <img src="assets/img/profile/pec.jpg" class="img-fluid" alt="Sarah Chen">
-                    </div>
-                    <div class="profile-meta">
-                      <div class="location">
-                        <i class="bi bi-geo-alt"></i>
-                        <span>Surigao Del Norte, Philippines</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-8" data-aos="fade-left" data-aos-delay="250">
-                  <div class="content-area">
-
-                    <div class="story-block">
-                      <p class="lead-text" style="text-align: justify;">A Computer Engineering graduate and BSIT Guest
-                        Lecturer at Surigao Del Norte State University with
-                        experience in web development, data management, IT education, research, and software
-                        development. I create responsive websites, organize and manage data. Skilled in technical
-                        problem-solving, embedded systems, and digital tools, I am passionate about innovation,
-                        efficiency, and continuous learning.</p>
-                    </div>
-
-                    <!-- ✅ ADD DOWNLOAD CV BUTTON HERE -->
-                    <div class="cv-download mt-2 mb-3" data-aos="fade-up" data-aos-delay="300">
-                      <a href="assets/cv/My_CV.pdf" class="cv-card-btn" download>
-                        <i class="bi bi-download"></i>
-                        Download CV
-                      </a>
-                    </div>
-
-                    <div class="philosophy-quote" data-aos="fade-up" data-aos-delay="450">
-                      <div class="quote-mark">;</div>
-                      <p style="text-align: justify;">Good design is not about perfection—it's about understanding,
-                        empathy, and continuous learning
-                        from the people who use what we create. — Wako Dida Godana</p>
-                    </div>
-
-                  </div>
-                </div>
-
+            <!-- Item 3 -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group" data-aos="fade-up">
+              <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-brand-bg bg-brand-surfaceHover absolute left-0 md:left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 z-10 group-hover:bg-brand-accent transition-colors">
+                <i class="ph ph-storefront text-white text-sm"></i>
+              </div>
+              <div class="bg-brand-surface p-6 rounded-2xl border border-brand-surfaceHover w-full md:w-[calc(50%-2.5rem)] hover:border-brand-accent transition-colors">
+                <span class="text-brand-accent text-xs font-bold tracking-widest uppercase mb-1 block">Sep 2023 - Jan 2024</span>
+                <h3 class="text-xl font-bold text-brand-heading mb-1">Sales Officer</h3>
+                <p class="text-sm font-medium text-brand-text mb-3">Motorstar South Cycle Trading</p>
+                <ul class="text-sm space-y-2 list-disc list-inside">
+                  <li style="text-align: start;">Managed sales operations and customer inquiries.</li>
+                  <li style="text-align: start;">Processed transactions and financing applications.</li>
+                  <li style="text-align: start;">Implemented sales strategies to meet targets.</li>
+                </ul>
               </div>
             </div>
 
           </div>
         </div>
 
-      </div>
+        <!-- Education & Certifications -->
+        <div>
+          <div class="flex items-center gap-4 mb-10" data-aos="fade-left">
+            <div class="w-12 h-12 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent text-2xl">
+              <i class="ph ph-graduation-cap"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-brand-heading">Education & Certifications</h2>
+          </div>
 
-    </section><!-- /About Section -->
+          <!-- Ed Cards -->
+          <div class="space-y-4 mb-10" data-aos="fade-up">
+            <div class="bg-brand-surface p-6 rounded-2xl border-l-4 border-brand-accent shadow-lg shadow-brand-bg">
+              <span class="text-brand-accent text-xs font-bold uppercase block mb-1">2024 - Present</span>
+              <h3 class="text-lg font-bold text-brand-heading">Master of Engineering in Computer Engineering</h3>
+              <p class="text-sm">Asia Pacific College</p>
+            </div>
+            <div class="bg-brand-surface p-6 rounded-2xl border border-brand-surfaceHover hover:border-brand-text transition-colors">
+              <span class="text-brand-text text-xs font-bold uppercase block mb-1">2018 - 2024</span>
+              <h3 class="text-lg font-bold text-brand-heading">Bachelor of Science in Computer Engineering</h3>
+              <p class="text-sm">Surigao Del Norte State University</p>
+            </div>
+          </div>
 
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-
-      <div class="container mb-5" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row align-items-start">
-          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
-            <div class="professional-journey">
-              <div class="section-intro">
-                <div class="icon-wrapper">
-                  <i class="bi bi-briefcase-fill"></i>
+          <!-- Certifications -->
+          <div class="bg-brand-surface p-8 rounded-2xl border border-brand-surfaceHover" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-lg font-bold text-brand-heading mb-6 border-b border-brand-surfaceHover pb-4">Key Certifications</h3>
+            <ul class="space-y-5">
+              <li class="flex gap-4 items-start">
+                <i class="ph-fill ph-seal-check text-brand-accent text-xl mt-0.5"></i>
+                <div>
+                  <h4 class="text-sm font-semibold text-brand-heading">AI in Action: Research Capability Building</h4>
+                  <p class="text-xs text-brand-text mt-1">SNSU • Sept 2025</p> <!-- Note: Keeping the year from original HTML -->
                 </div>
-                <h2>Professional Experience</h2>
-              </div>
-
-              <div class="experience-timeline">
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                  <div class="timeline-dot"></div>
-                  <div class="timeline-content">
-                    <div class="position-meta">
-                      <span class="timeline-year">August 2024 - Present</span>
-                    </div>
-                    <h3>Guest Lecturer</h3>
-                    <h4>Surigao Del Norte State University</h4>
-                    <p>
-                      • Delivered lectures and hands-on activities to IT and IS students.<br>
-                      • Provided academic guidance and assessed student learning.<br>
-                      • Collaborated with faculty to align course objectives.
-                    </p>
-                    <div class="key-achievements">
-                      <span class="achievement-tag">Lecturing</span>
-                      <span class="achievement-tag">Student Assessment</span>
-                      <span class="achievement-tag">Academic Guidance</span>
-                      <span class="achievement-tag">Faculty Collaboration</span>
-                      <span class="achievement-tag">Hands-on Training</span>
-                    </div>
-                  </div>
+              </li>
+              <li class="flex gap-4 items-start">
+                <i class="ph-fill ph-seal-check text-brand-accent text-xl mt-0.5"></i>
+                <div>
+                  <h4 class="text-sm font-semibold text-brand-heading">Hydroponics 101 Workshop</h4>
+                  <p class="text-xs text-brand-text mt-1">Urban Green Hydroponic System Incorp. • Dec 2024</p>
                 </div>
-
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="350">
-                  <div class="timeline-dot"></div>
-                  <div class="timeline-content">
-                    <div class="position-meta">
-                      <span class="timeline-year">February 2024 - December 2024</span>
-                    </div>
-                    <h3>Project Research Assistant</h3>
-                    <h4>Surigao Del Norte State University</h4>
-                    <p>
-                      • Developed software for an early warning system.<br>
-                      • Designed and developed a portable weather forecasting device.<br>
-                      • Conducted pilot testing.<br>
-                      • Assisted the project leader and staff in technical writing.
-                    </p>
-                    <div class="key-achievements">
-                      <span class="achievement-tag">Software Development</span>
-                      <span class="achievement-tag">Early Warning System</span>
-                      <span class="achievement-tag">Device Design</span>
-                      <span class="achievement-tag">Pilot Testing</span>
-                      <span class="achievement-tag">Technical Writing</span>
-                    </div>
-                  </div>
+              </li>
+              <li class="flex gap-4 items-start">
+                <i class="ph-fill ph-seal-check text-brand-accent text-xl mt-0.5"></i>
+                <div>
+                  <h4 class="text-sm font-semibold text-brand-heading">1st ACE for GATE Engineering Congress</h4>
+                  <p class="text-xs text-brand-text mt-1">Association of Caraga Educators • Nov 2024</p>
                 </div>
-
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-                  <div class="timeline-dot"></div>
-                  <div class="timeline-content">
-                    <div class="position-meta">
-                      <span class="timeline-year">September 2023 - January 2024</span>
-                    </div>
-                    <h3>Sales Officer</h3>
-                    <h4>Motorstar South Cycle Trading</h4>
-                    <p>
-                      • Managed sales operations and customer inquiries.<br>
-                      • Assisted clients in selecting and purchasing motorcycles.<br>
-                      • Processed transactions and financing applications.<br>
-                      • Implemented sales strategies to meet targets.
-                    </p>
-                    <div class="key-achievements">
-                      <span class="achievement-tag">Sales Operations</span>
-                      <span class="achievement-tag">Customer Service</span>
-                      <span class="achievement-tag">Client Assistance</span>
-                      <span class="achievement-tag">Transaction Processing</span>
-                      <span class="achievement-tag">Sales Strategy</span>
-                    </div>
-                  </div>
+              </li>
+              <li class="flex gap-4 items-start">
+                <i class="ph-fill ph-seal-check text-brand-accent text-xl mt-0.5"></i>
+                <div>
+                  <h4 class="text-sm font-semibold text-brand-heading">Qualitative & Quantitative Methods for Impact Assessment</h4>
+                  <p class="text-xs text-brand-text mt-1">SNSU • May-Jun 2024</p>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-            <div class="education-skills">
-              <div class="section-intro">
-                <div class="icon-wrapper">
-                  <i class="bi bi-mortarboard-fill"></i>
-                </div>
-                <h2>Education &amp; Qualifications</h2>
-
-                <div class="education-grid">
-                  <div class="education-card primary" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="education-header">
-                      <div class="degree-icon">
-                        <i class="bi bi-award"></i>
-                      </div>
-                      <div class="degree-info">
-                        <h3>Master of Engineering in Computer Engineering</h3>
-                        <p class="institution">Asia Pacific College</p>
-                        <span class="graduation-year">2024 - Present</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="education-card" data-aos="zoom-in" data-aos-delay="350">
-                    <div class="education-header">
-                      <div class="degree-icon">
-                        <i class="bi bi-laptop"></i>
-                      </div>
-                      <div class="degree-info">
-                        <h3>Bachelor of Science in Computer Engineering</h3>
-                        <p class="institution">Surigao Del Norte State University</p>
-                        <span class="graduation-year">2018 - 2024</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="certification-section" data-aos="fade-up" data-aos-delay="400">
-                    <h4>Professional Certifications</h4>
-
-                    <div class="certifications">
-
-                      <div class="cert-item">
-                        <i class="bi bi-patch-check"></i>
-                        <div class="cert-details">
-                          <span class="cert-name">AI in Action: Research Capability Building for a Future-Ready Digital
-                            Age</span>
-                          <span class="cert-provider">Surigao del Norte State University • Sept 23–25, 2025</span>
-                        </div>
-                      </div>
-
-                      <div class="cert-item">
-                        <i class="bi bi-patch-check"></i>
-                        <div class="cert-details">
-                          <span class="cert-name">Hydroponics 101 Workshop</span>
-                          <span class="cert-provider">Urban Green Hydroponic System Incorp. • Dec 19, 2024</span>
-                        </div>
-                      </div>
-
-                      <div class="cert-item">
-                        <i class="bi bi-patch-check"></i>
-                        <div class="cert-details">
-                          <span class="cert-name">Orientation and Community Feedback on the Use of Agriculture
-                            Forecasting Device (AGRIFORD)</span>
-                          <span class="cert-provider">Surigao del Norte State University • Nov 29, 2024</span>
-                        </div>
-                      </div>
-
-                      <div class="cert-item">
-                        <i class="bi bi-patch-check"></i>
-                        <div class="cert-details">
-                          <span class="cert-name">1st ACE for GATE Engineering Congress</span>
-                          <span class="cert-provider">Association of Caraga Educators for Geology, Architecture,
-                            Technology and Engineering • Nov 14–16, 2024</span>
-                        </div>
-                      </div>
-
-                      <div class="cert-item">
-                        <i class="bi bi-patch-check"></i>
-                        <div class="cert-details">
-                          <span class="cert-name">Futures Proofing SNSU: Aligning RIE Proposals to the Revised Regional
-                            Development Plan 2023–2028 and Enhancing GAD Integration</span>
-                          <span class="cert-provider">Surigao del Norte State University • Oct 29–31, 2024</span>
-                        </div>
-                      </div>
-
-                      <div class="cert-item">
-                        <i class="bi bi-patch-check"></i>
-                        <div class="cert-details">
-                          <span class="cert-name">Training on Qualitative and Quantitative Methods for Impact
-                            Assessment</span>
-                          <span class="cert-provider">Surigao del Norte State University • May 10–Jun 10, 2024</span>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-    </section><!-- /Resume Section -->
-
-    <!-- Skills Section -->
-
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-5">
-
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="bi bi-file-earmark-text"></i>
-              </div>
-              <div class="service-content">
-                <h3>Research & Technical Writing</h3>
-                <p style="text-align: justify;">Providing clear documentation, data entry, reports, and organized
-                  technical content for
-                  academic, business, and project requirements.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="250">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="bi bi-code-slash"></i>
-              </div>
-              <div class="service-content">
-                <h3>Web Development</h3>
-                <p style="text-align: justify;">Developing responsive and functional websites using HTML,
-                  CSS, Bootstrap, PHP, and Laravel
-                  with clean layouts and user-friendly experiences.</p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="bi bi-palette"></i>
-              </div>
-              <div class="service-content">
-                <h3>Design</h3>
-                <p style="text-align: justify;">Creating visual content, UI mockups, presentations, and marketing
-                  materials using Figma and Canva
-                  with modern and professional designs.</p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="350">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="bi bi-grid-3x3-gap"></i>
-              </div>
-              <div class="service-content">
-                <h3>Game Assets</h3>
-                <p style="text-align: justify;">Designing pixel art characters, icons, environments, and retro-style
-                  game assets with attention to
-                  detail and visual consistency.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="400">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="bi bi-cpu"></i>
-              </div>
-              <div class="service-content">
-                <h3>Software & Embedded Systems</h3>
-                <p style="text-align: justify;">Designing systems, building prototypes, and developing IoT-based
-                  solutions for automation and smart
-                  technology applications.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="450">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="bi bi-database"></i>
-              </div>
-              <div class="service-content">
-                <h3>Database Management</h3>
-                <p style="text-align: justify;">Managing and organizing MySQL databases for secure data storage,
-                  retrieval, maintenance, and
-                  efficient system performance.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="500">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="bi bi-mortarboard"></i>
-              </div>
-              <div class="service-content">
-                <h3>Education & Training</h3>
-                <p style="text-align: justify;">Conducting lectures, workshops, and hands-on activities that help
-                  learners build practical IT
-                  knowledge and technical skills.</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-    <!-- /Skills Section -->
-
-
-
-    <!-- Portfolio Section -->
-    <!-- <section id="portfolio" class="portfolio section">
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Projects</h2>
-      </div>
-
-      <div class="container mb-3" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <div class="filters-wrapper" data-aos="fade-up" data-aos-delay="200">
-            <ul class="portfolio-filters isotope-filters">
-              <li data-filter="*" class="filter-active">All Work</li>
-              <li data-filter=".filter-branding">Branding</li>
-              <li data-filter=".filter-web">Web Design</li>
-              <li data-filter=".filter-photography">Photography</li>
-              <li data-filter=".filter-print">Print Design</li>
+              </li>
             </ul>
           </div>
 
-          <div class="row gy-5 portfolio-container isotope-container" data-aos="fade-up" data-aos-delay="300">
-
-            <div class="col-lg-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-3.webp" class="img-fluid" alt="Brand Identity Project"
-                    loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-3.webp" class="glightbox action-btn preview-btn"
-                        title="Elemental Branding"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="action-btn details-btn" title="View Project"><i
-                          class="bi bi-arrow-up-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-meta">
-                    <span class="portfolio-category">Brand Identity</span>
-                    <span class="portfolio-year">2024</span>
-                  </div>
-                  <h3 class="portfolio-title">Elemental Branding</h3>
-                  <p class="portfolio-description">Comprehensive brand identity design focusing on natural elements and
-                    sustainable business practices.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6 portfolio-item isotope-item filter-web">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-7.webp" class="img-fluid" alt="Digital Platform"
-                    loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-7.webp" class="glightbox action-btn preview-btn"
-                        title="Digital Workspace"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="action-btn details-btn" title="View Project"><i
-                          class="bi bi-arrow-up-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-meta">
-                    <span class="portfolio-category">Web Application</span>
-                    <span class="portfolio-year">2024</span>
-                  </div>
-                  <h3 class="portfolio-title">Digital Workspace</h3>
-                  <p class="portfolio-description">Modern web application designed for remote collaboration with
-                    intuitive user experience and clean aesthetics.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6 portfolio-item isotope-item filter-photography">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-portrait-3.webp" class="img-fluid" alt="Urban Photography"
-                    loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-portrait-3.webp" class="glightbox action-btn preview-btn"
-                        title="Urban Narratives"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="action-btn details-btn" title="View Project"><i
-                          class="bi bi-arrow-up-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-meta">
-                    <span class="portfolio-category">Photography</span>
-                    <span class="portfolio-year">2023</span>
-                  </div>
-                  <h3 class="portfolio-title">Urban Narratives</h3>
-                  <p class="portfolio-description">Street photography series capturing the essence of metropolitan life
-                    and human connections.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6 portfolio-item isotope-item filter-print">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-9.webp" class="img-fluid" alt="Editorial Design"
-                    loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-9.webp" class="glightbox action-btn preview-btn"
-                        title="Annual Report Design"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="action-btn details-btn" title="View Project"><i
-                          class="bi bi-arrow-up-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-meta">
-                    <span class="portfolio-category">Editorial Design</span>
-                    <span class="portfolio-year">2024</span>
-                  </div>
-                  <h3 class="portfolio-title">Annual Report Design</h3>
-                  <p class="portfolio-description">Sophisticated annual report combining data visualization with
-                    compelling storytelling and premium print finishes.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-11.webp" class="img-fluid" alt="Package Design"
-                    loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-11.webp" class="glightbox action-btn preview-btn"
-                        title="Artisan Collection"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="action-btn details-btn" title="View Project"><i
-                          class="bi bi-arrow-up-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-meta">
-                    <span class="portfolio-category">Package Design</span>
-                    <span class="portfolio-year">2023</span>
-                  </div>
-                  <h3 class="portfolio-title">Artisan Collection</h3>
-                  <p class="portfolio-description">Luxury packaging design series celebrating traditional craftsmanship
-                    with contemporary minimalist approach.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6 portfolio-item isotope-item filter-web">
-              <div class="portfolio-card">
-                <div class="portfolio-image">
-                  <img src="assets/img/portfolio/portfolio-12.webp" class="img-fluid" alt="E-commerce Platform"
-                    loading="lazy">
-                  <div class="portfolio-overlay">
-                    <div class="portfolio-actions">
-                      <a href="assets/img/portfolio/portfolio-12.webp" class="glightbox action-btn preview-btn"
-                        title="Sustainable Commerce"><i class="bi bi-eye"></i></a>
-                      <a href="portfolio-details.html" class="action-btn details-btn" title="View Project"><i
-                          class="bi bi-arrow-up-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="portfolio-content">
-                  <div class="portfolio-meta">
-                    <span class="portfolio-category">E-commerce</span>
-                    <span class="portfolio-year">2024</span>
-                  </div>
-                  <h3 class="portfolio-title">Sustainable Commerce</h3>
-                  <p class="portfolio-description">Eco-conscious e-commerce platform design promoting sustainable
-                    products with seamless shopping experience.</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section> -->
-    <!-- /Portfolio Section -->
-
-    <!-- Services Section -->
-    <!-- /Services Section -->
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-      <!-- Section Title -->
-      <div class="container section-title mb-3" data-aos="fade-up">
-        <h2>Contact</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-5">
-
-            <div class="info-item">
-              <div class="info-icon">
-                <i class="bi bi-chat-dots"></i>
-              </div>
-              <div class="info-content">
-                <h4>Let's Connect</h4>
-              </div>
-            </div>
-
-            <div class="contact-details">
-
-              <div class="detail-item">
-                <div class="detail-icon">
-                  <i class="bi bi-envelope-open"></i>
-                </div>
-                <div class="detail-content">
-                  <span class="detail-label">Email me</span>
-                  <span class="detail-value">grumaconbianca@gmail.com</span>
-                </div>
-              </div>
-
-              <div class="detail-item">
-                <div class="detail-icon">
-                  <i class="bi bi-telephone-outbound"></i>
-                </div>
-                <div class="detail-content">
-                  <span class="detail-label">Call me</span>
-                  <span class="detail-value">+639-276-616-715</span>
-                </div>
-              </div>
-
-              <div class="detail-item">
-                <div class="detail-icon">
-                  <i class="bi bi-geo-alt-fill"></i>
-                </div>
-                <div class="detail-content">
-                  <span class="detail-label">Location</span>
-                  <span class="detail-value">Surigao City<br>Surigao Del Norte, Philippines</span>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-7">
-            <div class="form-wrapper">
-              <div class="form-header">
-                <h3>Send a message</h3>
-              </div>
-
-              <form id="contactForm" action="https://formsubmit.co/grumaconbianca@gmail.com" method="post" class="php-email-form">
-
-                <div class="row">
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Full Name</label>
-                      <input type="text" name="name" required="">
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Email Address</label>
-                      <input type="email" name="email" required="">
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="form-group">
-                  <label>Subject</label>
-                  <input type="text" name="subject" required="">
-                </div>
-
-                <div class="form-group">
-                  <label for="projectMessage">Message</label>
-                  <textarea name="message" id="projectMessage" rows="5" required=""></textarea>
-                   <input type="hidden" name="_captcha" value="false">
-                </div>
-
-                <button type="submit" class="submit-btn">
-                  <span>Send Message</span>
-                  <i class="bi bi-arrow-right"></i>
-                </button>
-
-                <p id="formMessage" style="display:none; margin-top:15px;"></p>
-
-              </form>
-
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
-    </section><!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer light-background">
-    <div class="container">
-      <h3 class="sitename">Bianca D. Grumacon</h3>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://www.facebook.com/biancadulfo/"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/phe_zel/"><i class="bi bi-instagram"></i></a>
-        <a
-          href="https://www.linkedin.com/public-profile/settings/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BP3quScCeRr2xZJFHSWnAKA%3D%3D"><i
-            class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Bianca Grumacon</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a
-            href="https://bootstrapmade.com/tools/">DevTools</a>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-brand-heading mb-4">Let's Work Together</h2>
+        <p class="max-w-2xl mx-auto text-lg">Ready to elevate your operations with a Technical Virtual Professional? Send me a message and let's discuss how I can help.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-12">
+        <!-- Contact Info -->
+        <div class="lg:col-span-2 space-y-6" data-aos="fade-right">
+          <div class="bg-brand-surface p-6 rounded-2xl border border-brand-surfaceHover flex items-center gap-5 hover:border-brand-accent transition-colors">
+            <div class="w-12 h-12 rounded-full bg-brand-bg flex items-center justify-center text-brand-accent text-xl flex-shrink-0">
+              <i class="ph ph-envelope-simple"></i>
+            </div>
+            <div>
+              <p class="text-xs text-brand-text uppercase font-bold tracking-wider mb-1">Email Me</p>
+              <a href="mailto:grumaconbianca@gmail.com" class="text-brand-heading font-medium hover:text-brand-accent transition-colors break-all">grumaconbianca@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="bg-brand-surface p-6 rounded-2xl border border-brand-surfaceHover flex items-center gap-5 hover:border-brand-accent transition-colors">
+            <div class="w-12 h-12 rounded-full bg-brand-bg flex items-center justify-center text-brand-accent text-xl flex-shrink-0">
+              <i class="ph ph-phone"></i>
+            </div>
+            <div>
+              <p class="text-xs text-brand-text uppercase font-bold tracking-wider mb-1">Call Me</p>
+              <a href="tel:+639276616715" class="text-brand-heading font-medium hover:text-brand-accent transition-colors">+639-276-616-715</a>
+            </div>
+          </div>
+
+          <div class="bg-brand-surface p-6 rounded-2xl border border-brand-surfaceHover flex items-center gap-5 hover:border-brand-accent transition-colors">
+            <div class="w-12 h-12 rounded-full bg-brand-bg flex items-center justify-center text-brand-accent text-xl flex-shrink-0">
+              <i class="ph ph-map-pin"></i>
+            </div>
+            <div>
+              <p class="text-xs text-brand-text uppercase font-bold tracking-wider mb-1">Location</p>
+              <p class="text-brand-heading font-medium">Surigao Del Norte, PH</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-3 bg-brand-surface p-8 rounded-2xl border border-brand-surfaceHover" data-aos="fade-left">
+          <form id="contactForm" action="https://formsubmit.co/grumaconbianca@gmail.com" method="post">
+            <input type="hidden" name="_captcha" value="false">
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label class="block text-sm font-medium text-brand-heading mb-2">Full Name</label>
+                <input type="text" name="name" required class="w-full bg-brand-bg border border-brand-surfaceHover rounded-xl px-4 py-3 text-brand-heading focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all placeholder-brand-text" placeholder="John Doe">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-brand-heading mb-2">Email Address</label>
+                <input type="email" name="email" required class="w-full bg-brand-bg border border-brand-surfaceHover rounded-xl px-4 py-3 text-brand-heading focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all placeholder-brand-text" placeholder="john@example.com">
+              </div>
+            </div>
+            
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-brand-heading mb-2">Subject</label>
+              <input type="text" name="subject" required class="w-full bg-brand-bg border border-brand-surfaceHover rounded-xl px-4 py-3 text-brand-heading focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all placeholder-brand-text" placeholder="Virtual Assistant Inquiry">
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-brand-heading mb-2">Message</label>
+              <textarea name="message" rows="5" required class="w-full bg-brand-bg border border-brand-surfaceHover rounded-xl px-4 py-3 text-brand-heading focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all placeholder-brand-text resize-none" placeholder="Tell me about your project..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-brand-accent text-white font-bold rounded-xl hover:bg-brand-accentHover transition-colors flex justify-center items-center gap-2 group submit-btn">
+              <span>Send Message</span>
+              <i class="ph ph-paper-plane-tilt group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+            </button>
+            <p id="formMessage" class="hidden mt-4 text-center text-sm font-medium"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand-bg border-t border-brand-surface py-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+      <h3 class="text-2xl font-bold text-brand-heading mb-6">Bianca D. Grumacon</h3>
+      <div class="flex justify-center items-center gap-6 mb-8">
+        <a href="https://www.facebook.com/biancadulfo/" target="_blank" class="text-brand-text hover:text-brand-accent text-2xl transition-colors"><i class="ph-fill ph-facebook-logo"></i></a>
+        <a href="https://www.instagram.com/dulfobg/" target="_blank" class="text-brand-text hover:text-brand-accent text-2xl transition-colors"><i class="ph-fill ph-instagram-logo"></i></a>
+        <a href="https://www.linkedin.com/in/bianca-grumacon" target="_blank" class="text-brand-text hover:text-brand-accent text-2xl transition-colors"><i class="ph-fill ph-linkedin-logo"></i></a>
+      </div>
+      <p class="text-sm text-brand-text">
+        &copy; <span id="year"></span> Bianca Grumacon. All Rights Reserved. <br>
+        <span class="text-xs opacity-50 mt-2 block">Designed for High-Performance Technical Support</span>
+      </p>
+    </div>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-   <script>
-  const form = document.getElementById("contactForm");
-  const formMessage = document.getElementById("formMessage");
-  const submitBtn = form.querySelector(".submit-btn");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    submitBtn.disabled = true;
-    submitBtn.style.display = "none";
-    formMessage.style.display = "block";
-    formMessage.style.color = "#666";
-    formMessage.textContent = "Sending message...";
-
-    fetch(form.action, {
-      method: "POST",
-      body: new FormData(form),
-      headers: {
-        "Accept": "application/json"
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        form.reset();
-        formMessage.style.color = "#198754";
-        formMessage.textContent = "Thank you, your message was successfully sent.";
-      } else {
-        submitBtn.style.display = "inline-flex";
-        submitBtn.disabled = false;
-        formMessage.style.color = "#dc3545";
-        formMessage.textContent = "Message was not sent. Please try again.";
-      }
-    })
-    .catch(error => {
-      submitBtn.style.display = "inline-flex";
-      submitBtn.disabled = false;
-      formMessage.style.color = "#dc3545";
-      formMessage.textContent = "Message was not sent. Please try again.";
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS Animation
+    AOS.init({
+      once: true,
+      offset: 50,
+      duration: 800,
     });
-  });
-</script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+    // Dynamic Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Mobile Menu Toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const links = document.querySelectorAll('.mobile-link');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+      });
+    });
+
+    // Form Handling
+    const form = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+    const submitBtn = form.querySelector(".submit-btn");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const btnText = submitBtn.querySelector('span');
+      btnText.textContent = "Sending...";
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+      
+      formMessage.classList.add('hidden');
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          "Accept": "application/json"
+        }
+      })
+      .then(response => {
+        formMessage.classList.remove('hidden');
+        if (response.ok) {
+          form.reset();
+          formMessage.classList.remove('text-red-400');
+          formMessage.classList.add('text-green-400');
+          formMessage.textContent = "Thank you! Your message was sent successfully.";
+        } else {
+          throw new Error('Network response was not ok.');
+        }
+      })
+      .catch(error => {
+        formMessage.classList.remove('hidden');
+        formMessage.classList.remove('text-green-400');
+        formMessage.classList.add('text-red-400');
+        formMessage.textContent = "Oops! Something went wrong. Please try again.";
+      })
+      .finally(() => {
+        btnText.textContent = "Send Message";
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+      });
+    });
+  </script>
 </body>
-
 </html>
